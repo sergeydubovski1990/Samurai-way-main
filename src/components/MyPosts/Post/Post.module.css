@@ -1,0 +1,23 @@
+.content {
+    grid-area: c;
+    background-color: blue;
+}
+
+.ava {
+    width: 50px;
+    border: transparent;
+    border-radius: 50%;
+}
+
+.tree {
+    width: 1000px;
+    height: 300px;
+}
+.item {
+    color: #f3045f;
+}
+.item img {
+    width: 60px;
+    border-radius: 50%;
+    height: 30px;
+}
