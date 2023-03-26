@@ -6,11 +6,18 @@ const MyPosts = () => {
     return (
         <div className={s.content}>
             <div>
-                My posts
+                <h2>
+                    My posts
+                </h2>
             </div>
             <div>
-                <textarea name="" id=""></textarea>
-                <button>Add post</button>
+                <div>
+                    <textarea name="" id=""></textarea>
+                </div>
+
+                <div>
+                    <button>Add post</button>
+                </div>
             </div>
             <div className={s.posts}>
                 <Post likes={1} message='Hi'/>
@@ -18,8 +25,8 @@ const MyPosts = () => {
                 <Post likes={17} message={'Hallow'}/>
                 <Post likes={22} message={'Я не буду целовать холодных рук'}/>
 
-        </div>
             </div>
+        </div>
 
     );
 };

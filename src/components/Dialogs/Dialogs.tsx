@@ -1,38 +1,53 @@
 import React from 'react';
-import s   from './Dialogs.module.css'
+import s from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
 
- export const Dialogs = () => {
+type DialogsItemType = {
+    name: string
+    id: string
+}
+
+type MessagePropsType = {
+    messageeee: string
+}
+const DialogsItem = (props: DialogsItemType) => {
+    let path = "/dialogs/" + props.id
+    return (
+        <div className={s.dialog + '' + s.active}>
+            <NavLink to={path}>{props.name}</NavLink>
+        </div>
+    )
+}
+const Message = (props: MessagePropsType)=> {
+    let mess = props.messageeee
+    return (
+        <div>
+            <div className={s.message}>{mess}</div>
+        </div>
+    )
+}
+
+
+const Dialogs = () => {
     return (
         <div>
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    <div className={s.dialog}>
-                        <NavLink to="/dialog1"> Dimych</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to="/dialog2"> Lisa</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to="/dialog3"> Tommy</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to="/dialog4"> Grisha</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to="/dialog5"> Masha</NavLink>
-                    </div>
-                    <div className={s.dialog}>
-                        <NavLink to="/dialog6"> Kira</NavLink>
-                    </div>
+                    <DialogsItem name='Dimych' id='1'/>
+                    <DialogsItem name='Lisa' id='2'/>
+                    <DialogsItem name='Tommy' id='3'/>
+                    <DialogsItem name='Grisha' id='4'/>
+                    <DialogsItem name='Masha' id='5'/>
+                    <DialogsItem name='Masha' id='6'/>
                 </div>
                 <div className={s.messages}>
-                    <div className={s.message}>Hi</div>
-                    <div className={s.message}>How is you IT?</div>
-                    <div className={s.message}>Yo</div>
+                    <Message messageeee="Hi" />
+                    <Message messageeee="Lox" />
+                    <Message messageeee="Sam Lox" />
                 </div>
             </div>
         </div>
     );
 };
 
+export default Dialogs;
