@@ -1,6 +1,6 @@
 .content {
     grid-area: c;
-    background-color: blue;
+    background-color: hotpink;
 }
 
 .ava {
@@ -14,10 +14,9 @@
     height: 300px;
 }
 .item {
-    color: #f3045f;
+    color: rgba(172, 185, 53, 0.16);
 }
 .item img {
     width: 60px;
-    border-radius: 50%;
     height: 30px;
 }

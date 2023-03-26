@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "../MyPosts.module.css";
-import {message} from "antd";
+
 
 type PostType = {
     message: string
