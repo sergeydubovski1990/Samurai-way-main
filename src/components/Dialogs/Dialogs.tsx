@@ -1,10 +1,11 @@
 import React from 'react';
 import s from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
+import {message} from "antd";
 
 type DialogsItemType = {
     name: string
-    id: string
+    id: number
 }
 
 type MessagePropsType = {
@@ -29,22 +30,39 @@ const Message = (props: MessagePropsType)=> {
 
 
 const Dialogs = () => {
+    let DialogsData = [
+        {id:1, name:'Dimych'},
+        {id:2, name:'Lisa'},
+        {id:3, name:'Tommy'},
+        {id:4, name:'Masha'},
+        {id:5, name:'Masha'},
+        {id:6, name:'Anna'}
+    ]
+
+    let MessagesData = [
+        {id:1, message:'Hi'},
+        {id:2, message:'Lox'},
+        {id:3, message:'Ya ne bydu celovat'},
+        {id:4, message:'Chto novogo?'},
+        {id:5, message:'vot on ya'},
+        {id:6, message:'bull'}
+    ]
+
+    let dialogEl = DialogsData.map(m=><DialogsItem name={m.name} id={m.id}/>)
+    let messEl = MessagesData.map(m=><Message messageeee={m.message} />)
+    const newMessage = React.useRef<HTMLTextAreaElement>(null);
     return (
         <div>
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    <DialogsItem name='Dimych' id='1'/>
-                    <DialogsItem name='Lisa' id='2'/>
-                    <DialogsItem name='Tommy' id='3'/>
-                    <DialogsItem name='Grisha' id='4'/>
-                    <DialogsItem name='Masha' id='5'/>
-                    <DialogsItem name='Masha' id='6'/>
+                    {dialogEl}
                 </div>
                 <div className={s.messages}>
-                    <Message messageeee="Hi" />
-                    <Message messageeee="Lox" />
-                    <Message messageeee="Sam Lox" />
+                    {messEl}
                 </div>
+                <div><textarea ref={newMessage} ></textarea></div>
+                <div> <button>+</button></div>
+
             </div>
         </div>
     );
