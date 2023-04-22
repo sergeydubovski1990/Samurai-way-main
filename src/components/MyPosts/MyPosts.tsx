@@ -4,20 +4,20 @@ import Post from "./Post/Post";
 
 const MyPosts = () => {
 
-    let postData = [
+    const postData = [
         {id: 1, message: 'Hi', likesCount: 12},
         {id: 2, message: 'By', likesCount: 1},
         {id: 3, message: 'Я не буду целовать холодный труп', likesCount: 1},
         {id: 4, message: 'Лиза, ты тут?', likesCount: 100}
     ]
 
-    let postsMaping = postData.map(p => <Post likes={p.likesCount} message={p.message}/>)
+    const postsMaping = postData.map(p => <Post likes={p.likesCount} message={p.message}/>)
 
-    let newPostEl = React.useRef<HTMLTextAreaElement>(null);
+    const newPostEl = React.createRef<HTMLTextAreaElement>();
 
   const addPost = () => {
-        alert("Samurai")
-    let text = newPostEl.current?.value;
+        alert(newPostEl.current?.value)
+    const text = newPostEl.current?.value;
     }
 
     return (
